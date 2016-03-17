@@ -337,6 +337,11 @@ NSString static *const kYTPlayerStaticProxyRegexPattern = @"^https://content.goo
   return [self stringFromEvaluatingJavaScript:@"player.getVideoEmbedCode();"];
 }
 
+- (NSString *)getCurrentVideotitle {
+    NSString *returnValue = [self stringFromEvaluatingJavaScript:@"player.getVideoData().title"];
+    return returnValue;
+}
+
 #pragma mark - Playlist methods
 
 - (NSArray *)playlist {
@@ -832,7 +837,6 @@ NSString static *const kYTPlayerStaticProxyRegexPattern = @"^https://content.goo
 - (NSString *)stringForJSBoolean:(BOOL)boolValue {
   return boolValue ? @"true" : @"false";
 }
-
 #pragma mark - Exposed for Testing
 
 - (void)setWebView:(UIWebView *)webView {

@@ -657,7 +657,12 @@ typedef NS_ENUM(NSInteger, YTPlayerError) {
  * @return The embed code for the current video. Returns nil if no video is loaded yet.
  */
 - (nullable NSString *)videoEmbedCode;
-
+/**
+ *  To get the video title once the video is ready.
+ *
+ *  @return Title of the video if exsits.
+ */
+- (nullable NSString *)getCurrentVideotitle;
 #pragma mark - Retrieving playlist information
 
 // Retrieving playlist information. These methods correspond to the
